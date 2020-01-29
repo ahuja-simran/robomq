@@ -1,0 +1,16 @@
+<table mat-table *ngIf="emp.length!=0">
+  <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Salary</th>
+  <th>Department</th>
+  <th colspan="2">Action</th></tr>
+  <tr *ngFor="let i of emp">
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.sal}}</td>
+    <td>{{i.dept}}</td>
+    <td><input type="button" value="Update"></td>
+    <td><input type="button" value="Delete"></td>
+  </tr>
+</table>
