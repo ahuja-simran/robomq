@@ -1,0 +1,32 @@
+
+<div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="UserName" formControlName="email" required/><br><br><br>
+    <span *ngIf="registerForm.controls.email.errors?.required">Username is required</span>
+
+    <br><br><br><input type="password" placeholder="Password" formControlName="password" required/>
+    <span *ngIf="registerForm.controls.password.errors?.required">Password is required</span>
+    <span *ngIf="registerForm.controls.password.errors?.pattern">Enter the password according to specifications</span>
+
+    <br><br><br><input type="text" placeholder="Name" formControlName="name" required>
+    <span *ngIf="registerForm.controls.name.errors?.required"> Name is required</span>
+    <!-- <span *ngIf="registerForm.controls.name.errors?.maxLength"> Max Length is only 50 characters</span> -->
+    <span *ngIf="registerForm.controls.name.errors?.pattern"> Only alphabets accepted</span>
+
+    <br><br><br><input type="text" placeholder="Email" formControlName="email" required/>
+    <span *ngIf="registerForm.controls.email.errors?.required">Email is required</span>
+    <span *ngIf="registerForm.controls.email.errors?.pattern">Enter valid email</span>
+
+    <br><br><br><input type="text" placeholder="Mobile" formControlName="mobile" required/>
+    <span *ngIf="registerForm.controls.mobile.errors?.pattern">Mobile number is not valid</span>
+
+    <span *ngIf="registerForm.controls.mobile.errors?.required">Mobile number is required</span>
+    <span *ngIf="registerForm.controls.mobile.errors?.minLength">Min Length is 10</span>
+
+
+    <br><br><br><button type="submit">Login</button>
+   </form>
+
+</div>
+
+

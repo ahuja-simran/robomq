@@ -1,0 +1,27 @@
+<form [formGroup]= "loginForm" (ngSubmit)= "onSubmit()">
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td> Email </td>
+    <td>
+      <input type="email" name = "email" placeholder ="Enter Email" formControlName="email" required>
+      <br>
+      <span *ngIf="loginForm.controls.email.errors?.required"> Email is required </span>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td> Password </td>
+    <td>
+      <input type="password"  name= "password" placeholder="**********" formControlName="password" required>
+      <br>
+      <span *ngIf= "loginForm.controls.password.errors?.required"> Password is required </span>
+    </td>
+  </tr>
+</table>
+
+
+<button type="submit"> Login </button>
+
+</form>
+
